@@ -14,9 +14,9 @@ inputs:
   path:
     description: 'Path to the directory containing the XML templates that require namespacing'
     required: true
-  runs:
-    using: composite
-    steps:
-      - run: |
-          grep -rl ${{ inputs.pattern }} ${{ inputs.path }}/*.{xml,lua} | xargs sed -i "s/${{ inputs.pattern }}/${{ inputs.name }}/g"
-        shell: bash
+runs:
+  using: composite
+  steps:
+    - run: |
+        grep -rl ${{ inputs.pattern }} ${{ inputs.path }}/*.{xml,lua} | xargs sed -i "s/${{ inputs.pattern }}/${{ inputs.name }}/g"
+      shell: bash
