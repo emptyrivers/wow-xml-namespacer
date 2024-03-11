@@ -20,3 +20,7 @@ jobs:
       # blah blah blah, upload to CF or wherever
 
 ```
+
+## Some limitations
+
+Because the standard packager is somewhat atomic, it's a bit awkward to inject an extra processing step into the middle. Consider running the packager once with -zd (skip upload & zip creation), then (after this step) run it again with -el (skip download of dependencies & localization, but *do* zip & upload)
