@@ -18,5 +18,5 @@ runs:
   using: composite
   steps:
     - run: |
-        grep -rl ${{ inputs.pattern }} ${{ inputs.path }}/*.{xml,lua} | xargs sed -i "s/${{ inputs.pattern }}/${{ inputs.name }}/g"
+        grep -rl ${{ inputs.pattern }} ${{ inputs.path }}/*.{xml,lua,xsd} | xargs sed -i "s/${{ inputs.pattern }}/${{ inputs.name }}/g"
       shell: bash
